@@ -80,7 +80,11 @@
         "refresh-test-database": [
             "@php artisan migrate:refresh --database=mysql_testing",
             "@php artisan db:seed --class=DummyContentSeeder --database=mysql_testing"
-        ]
+        ],
+	"post-install-cmd": [
+     	    "php artisan clear-compiled",
+            "chmod -R 777 public/"
+ 	]
     },
     "config": {
         "optimize-autoloader": true,
